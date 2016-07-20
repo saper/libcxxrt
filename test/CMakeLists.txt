@@ -21,7 +21,7 @@ target_link_libraries(cxxrt-test-static cxxrt-static gcc_s pthread ${CMAKE_DL_LI
 
 add_executable(cxxrt-test-shared ${CXXTEST_SOURCES})
 set_property(TARGET cxxrt-test-shared PROPERTY LINK_FLAGS -nodefaultlibs)
-target_link_libraries(cxxrt-test-shared cxxrt-shared pthread ${CMAKE_DL_LIBS} c)
+target_link_libraries(cxxrt-test-shared cxxrt-shared gcc_s pthread ${CMAKE_DL_LIBS} c)
 
 include_directories(${CMAKE_SOURCE_DIR}/src)
 add_executable(cxxrt-test-foreign-exceptions test_foreign_exceptions.cc)
